@@ -1,0 +1,11 @@
+= simple_form_for(@post) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :org
+    = f.input :body, :as => :text, :input_html => {:color=>'#ffffff' ,:maxlength =>1500,:style=> 'height:500px; width: 100%'}
+    -if logged_in?
+      = f.check_box :val
+  .form-actions
+    = f.button :submit

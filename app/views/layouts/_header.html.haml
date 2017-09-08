@@ -1,0 +1,26 @@
+%header#header.header-rm
+  .container-fluid
+    %nav.navbar.custom-head
+      .container-fluid
+        .navbar-header
+          %button.navbar-toggle{"data-target" => "#myNavbar", "data-toggle" => "collapse", :type => "button", :style => "margin-top:45px; border-width:1px; border-color:black"}
+            %span.icon-bar{:style => "background-color:black"}
+            %span.icon-bar{:style => "background-color:black"}
+            %span.icon-bar{:style => "background-color:black"}
+          -# %a.navbar-brand
+          -#   = link_to root_url do
+          -#     = image_tag 'logos/Logom.png', :style => " padding-top:20px", :class => "img custom-logo"
+        #myNavbar.collapse.navbar-collapse
+          %ul.nav.navbar-nav.navbar-right{:style => "margin-top:45px;"}
+            %li
+              = link_to 'Home', root_url, :style => "text-align:right"
+            %li
+              = link_to 'About', about_path, :style => "text-align:right"
+            -if logged_in?
+              %li
+                = link_to 'Admin', option_path, :style => "text-align:right"
+              %li
+                = link_to 'Logout', logout_path, :method => :delete, :style => "text-align:right"
+            -else
+              %li
+                = link_to 'Login', login_path, :class => 'btn btn-login', :style => "text-align:right"

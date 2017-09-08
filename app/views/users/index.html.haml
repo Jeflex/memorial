@@ -1,0 +1,26 @@
+.background-image-wrapper
+  .welcome-block
+    .container
+      %h1 Listing users
+      .container{:style => "overflow:auto; background: #ffffff"}
+        %table.table-responsive.table-striped{:style => "background:#ffffff"}
+          %thead
+            %tr
+              %th{:style => "padding-right:10px;"} Username
+              %th{:style => "padding-right:10px;"} Password
+              %th{:style => "padding-right:10px;"}
+              %th{:style => "padding-right:10px;"}
+              %th{:style => "padding-right:10px;"}
+
+          %tbody
+            - @users.each do |user|
+              %tr
+                %td= user.username
+                %td= user.password
+                %td= link_to 'Show', user, :class => "btn btn-primary", :style => "color:#ffffff"
+                %td= link_to 'Edit', edit_user_path(user), :class => "btn btn-warning", :style => "color:#ffffff"
+                %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger", :style => "color:#ffffff"
+
+      %br
+
+      = link_to 'New User', new_user_path, :class => "btn btn-primary", :style => "color:#ffffff"

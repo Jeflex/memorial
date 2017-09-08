@@ -1,0 +1,9 @@
+.background-image-wrapper
+  .welcome-block
+    .container{:style => "text-align:center"}
+      %h1 Editing user
+      = render 'form'
+
+      = link_to 'Show', @post, :class => "btn btn-primary", :style => "color:#ffffff"
+      \|
+      = link_to 'Back', posts_path, :class => "btn btn-primary", :style => "color:#ffffff"

@@ -1,0 +1,32 @@
+.background-image-wrapper
+  .container
+    .row
+      .col-md-12
+        .welcome-block
+          %h2 In Memory of
+          %hr{ :style => "background-color: #8D99B8;"}
+          .resize
+            =image_tag("Lotfi1.jpg", :style=>"height: auto; display: block; margin-left: auto; margin-right: auto; max-width:100%;")
+          %h1 Lotfi A. Zadeh
+          %br
+          %h1 1921 - 2017
+          %br
+          %br
+          -# %p Thank-you for visiting our page. Please browse our properties,
+          -# %p and feel free to contact us at any time.
+        .welcome-block
+          .container{:style => "text-align:center"}
+            = link_to 'New Post', new_post_path, :class => "btn btn-primary", :style => "color:#ffffff"
+          %br
+          -@approvedPosts.each do |p|
+            %br
+            .welcome-block{:style => "text-align:center;"}
+              %p{:style => "color:#ffffff;font-size: 15px;"}
+                =p.body
+              %p{:style => "color:#ffffff;font-size: 15px;"}
+                =p.name
+                %br
+                =p.org
+
+              %br
+            %br

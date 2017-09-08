@@ -1,0 +1,8 @@
+.background-image-wrapper
+  .welcome-block
+    .container{:style => "text-align:center"}
+      %h1 New user
+
+      = render 'form'
+
+      = link_to 'Back', users_path, :class => "btn btn-primary", :style => "color:#ffffff"

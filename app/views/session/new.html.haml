@@ -1,0 +1,13 @@
+= render('layouts/header')
+.background-image-wrapper
+  .container
+    .welcome-block
+      %h1 Log in
+      .row{:style => "padding-bottom: 30px;"}
+        .col-md-6.col-md-offset-3{:style => "text-align:center;"}
+          = simple_form_for(:session, url: login_path) do |f|
+            = f.input :username, class: 'form-control'
+            %br
+            = f.input :password, class: 'form-control'
+            %br
+            = f.submit "Log in", class: "btn btn-primary"

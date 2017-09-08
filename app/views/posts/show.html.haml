@@ -1,0 +1,20 @@
+.background-image-wrapper
+  .welcome-block
+    .container{:style => "text-align:center"}
+      %p#notice= notice
+
+      %p{:style => "color:white"}
+        %b Name:
+        = @post.name
+      %p{:style => "color:white"}
+        %b Org:
+        = @post.org
+      %p{:style => "color:white"}
+        %b Body:
+        = @post.body
+      %p{:style => "color:white"}
+        %b Approved:
+        = @post.val
+      = link_to 'Edit', edit_post_path(@post), :class => "btn btn-primary", :style => "color:#ffffff"
+      \|
+      = link_to 'Back', posts_path, :class => "btn btn-primary", :style => "color:#ffffff"

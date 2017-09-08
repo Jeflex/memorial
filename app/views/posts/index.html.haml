@@ -1,0 +1,28 @@
+.background-image-wrapper
+  .welcome-block
+    .container
+      %h1 Listing Posts
+      .container{:style => "overflow:auto; background: #ffffff"}
+        %table.table-responsive.table-striped{:style => "background:#ffffff"}
+          %thead
+            %tr
+              %th{:style => "padding-right:10px;"} Name
+              %th{:style => "padding-right:10px;"} Organization
+              %th{:style => "padding-right:10px;"} Body
+              %th{:style => "padding-right:10px;"} Approved
+              %th{:style => "padding-right:10px;"}
+
+          %tbody
+            - @posts.each do |post|
+              %tr
+                %td= post.name
+                %td= post.org
+                %td= post.body
+                %td= post.val
+                %td= link_to 'Show', post, :class => "btn btn-primary", :style => "color:#ffffff"
+                %td= link_to 'Edit', edit_post_path(post), :class => "btn btn-warning", :style => "color:#ffffff"
+                %td= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger", :style => "color:#ffffff"
+
+      %br
+
+      = link_to 'New Post', new_post_path, :class => "btn btn-primary", :style => "color:#ffffff"

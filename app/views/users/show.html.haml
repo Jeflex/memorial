@@ -1,0 +1,15 @@
+.background-image-wrapper
+  .welcome-block
+    .container{:style => "text-align:center"}
+      %p#notice= notice
+
+      %p{:style => "color:white"}
+        %b Username:
+        = @user.username
+      %p{:style => "color:white"}
+        %b Password:
+        = @user.password
+
+      = link_to 'Edit', edit_user_path(@user), :class => "btn btn-primary", :style => "color:#ffffff"
+      \|
+      = link_to 'Back', users_path, :class => "btn btn-primary", :style => "color:#ffffff"

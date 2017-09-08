@@ -1,0 +1,11 @@
+.background-image-wrapper
+  .welcome-block
+    .container{:style => "text-align:center"}
+      %h1 New Post
+
+      = render 'form'
+
+      -if logged_in?
+        = link_to 'Back', posts_path, :class => "btn btn-primary", :style => "color:#ffffff"
+      -else
+        = link_to 'Back', root_path, :class => "btn btn-primary", :style => "color:#ffffff"

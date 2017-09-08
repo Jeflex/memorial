@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+@import "font-awesome";
+@import "colors";
+@import "welcome";
+@import "scaffolds";
+@import "bootstrap-sprockets";
+@import 'bootstrap';
+@require "jquery.ui.all";
+@require "jquery.ui.core";
+@require "jquery.ui.theme";
+@require "self";
+@require "tree .";
