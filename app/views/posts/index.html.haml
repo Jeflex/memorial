@@ -13,15 +13,16 @@
               %th{:style => "padding-right:10px;"}
 
           %tbody
-            - @posts.each do |post|
-              %tr
-                %td= post.name
-                %td= post.org
-                %td= post.body
-                %td= post.val
-                %td= link_to 'Show', post, :class => "btn btn-primary", :style => "color:#ffffff"
-                %td= link_to 'Edit', edit_post_path(post), :class => "btn btn-warning", :style => "color:#ffffff"
-                %td= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger", :style => "color:#ffffff"
+            -if ((@posts == nil)==false)
+              - @posts.each do |post|
+                %tr
+                  %td= post.name
+                  %td= post.org
+                  %td= post.body
+                  %td= post.val
+                  %td= link_to 'Show', post, :class => "btn btn-primary", :style => "color:#ffffff"
+                  %td= link_to 'Edit', edit_post_path(post), :class => "btn btn-warning", :style => "color:#ffffff"
+                  %td= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger", :style => "color:#ffffff"
 
       %br
 

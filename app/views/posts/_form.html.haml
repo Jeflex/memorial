@@ -1,11 +1,14 @@
 = simple_form_for(@post) do |f|
   = f.error_notification
 
-  .form-inputs
-    = f.input :name
-    = f.input :org
-    = f.input :body, :as => :text, :input_html => {:color=>'#ffffff' ,:maxlength =>1500,:style=> 'height:500px; width: 100%'}
+  .form-inputs{ :style => "color: #ffffff; text-align:center; font-family: 'Oswald';"}
+    = f.label "Name"
+    = f.input :name, :label => false, :input_html => {:style=> 'color:#000000'}
+    = f.label "Organization"
+    = f.input :org, :label => false, :input_html => {:style=> 'color:#000000'}
+    = f.input :body, :as => :text, :input_html => {:color=>'#ffffff' ,:maxlength =>1500,:style=> 'height:500px; width: 100%; color:#000000;'}
     -if logged_in?
+      = f.label "Show this post?"
       = f.check_box :val
   .form-actions
-    = f.button :submit
+    = f.button :submit, :class => "btn btn-primary", :style => "color:#ffffff"
