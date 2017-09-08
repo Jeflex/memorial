@@ -13,6 +13,7 @@
               %th{:style => "padding-right:10px;"}
 
           %tbody
+            - @posts = Post.all
             - @posts.each do |post|
               %tr
                 %td= post.name
