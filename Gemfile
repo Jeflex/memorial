@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 #postgresql
-gem 'pg'
+gem 'sqlite3'
 gem "font-awesome-rails"
 gem 'will_paginate', '~> 3.1.0'
 
