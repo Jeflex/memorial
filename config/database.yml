@@ -8,11 +8,11 @@ development:
   pool: 5
   timeout: 5000
 production:
-  adapter: mysql2
-  database: at_gattaca
-  host: localhost
-  password: renebe9a5
-  username: gattaca
+  adapter: sqlite3
+  database: db/production.sqlite3
+  # host: localhost
+  # password: renebe9a5
+  # username: gattaca
 test:
   adapter: sqlite3
   database: db/test.sqlite3
